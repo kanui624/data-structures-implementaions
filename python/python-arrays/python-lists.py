@@ -179,3 +179,16 @@ print(queue)
 # Outputs: 
 # ['a', 'b', 'c', 'd']
 
+# Copying Lists
+# The following techniques for copying lists create shallow copies meaning that they don't copy over nested objects
+a = [1, 2, [3, 4]]
+b = a[:]
+a[2][0] = 10
+print(a)
+print(b)
+# Both a and b will have the same output becasue b is simply referencing a's nexted array, which enables all mutations to a's nested array to also change b's copy of a
+# Output:
+# a:    [1, 2, [10, 4]]
+# b:    [1, 2, [10, 4]]
+
+
