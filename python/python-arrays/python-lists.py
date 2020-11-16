@@ -191,4 +191,15 @@ print(b)
 # a:    [1, 2, [10, 4]]
 # b:    [1, 2, [10, 4]]
 
-
+# Deep Copy
+# Since here we are doing a deep copy d becomes it's own entity and doesn't reference c's list once it copies it 
+import copy
+c = [1, 2, [3, 4]]
+d = copy.deepcopy(c)
+c[2][0] = 10
+print(c)
+# Outputs: 
+# [1, 2, [10, 4]]
+print(d)
+# Outputs: 
+# [1, 2, [3, 4]]
