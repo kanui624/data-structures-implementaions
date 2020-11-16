@@ -203,3 +203,22 @@ print(c)
 print(d)
 # Outputs: 
 # [1, 2, [3, 4]]
+
+
+# Inserting Items into a Sorted List
+# The insort() method from the bisect module injects the argument given into the array at it's sorted position
+x = [4, 1, 3]
+x.sort()
+import bisect
+bisect.insort(x, 2)
+print(x)
+# Outputs: 
+# [1, 3, 2, 4]
+
+# To know the index at which an element will be injected into you can use the bisect() method from the bisect module
+f = [4, 1]
+f.sort()
+import bisect
+whereInjected = bisect.bisect(f, 2)
+print(whereInjected)
+# Outputs: 1
