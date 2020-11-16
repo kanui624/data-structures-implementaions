@@ -151,4 +151,17 @@ print(multByTwo)
 # Output:
 # [4, 8]
 
+# Lists as stacks
+stack = ['a','b','c','d']
+stack.append("e")
+stack.append("f")
+print(stack)
+# Outputs: 
+# ['a', 'b', 'c', 'd', 'e', 'f']
+stack.pop()
+print(stack)
+# Outputs: 
+# ['a', 'b', 'c', 'd', 'e']
+
+
 
