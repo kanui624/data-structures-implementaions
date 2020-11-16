@@ -55,3 +55,38 @@ print(findIndex)
 # Outputs: 
 # 5
 
+# .insert() inserts an element at a specified index. the insert() method expects two arguments
+arr.insert(2, "a")
+arr.insert(2, "a")
+print(arr)
+# Outputs:
+# ['one', 'three', 'a', 'a', 10, [200, 300], 'hey', 'yo']
+
+# revmove() removes the first occurence of an element by passing in the element as the argument
+arr.remove("three")
+print(arr)
+# Outputs:
+# ['one', 'a', 'a', 10, [200, 300], 'hey', 'yo']
+
+# pop() method removes the last element in the list
+arr.pop()
+print(arr)
+# Outputs:
+# ['one', 'a', 'a', 10, [200, 300], 'hey']
+
+# count() counts the number of elements within the list that are equal to the argument passed in 
+yo = arr.count("a")
+print(arr)
+print(yo)
+# Outputs: 
+# ['one', 'a', 'a', 10, [200, 300], 'hey']
+# 2
+
+# sort() method performs an in place sorting by default
+arrTwo = ["c", "d", "b", "a"]
+arrTwo.sort()
+print(arrTwo)
+# Outputs: 
+# ['a', 'b', 'c', 'd']
+
+
