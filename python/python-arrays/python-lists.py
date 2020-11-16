@@ -132,7 +132,8 @@ readUpToThirdIndex = listTwo[:3]
 # Before:   [0, 1, 2, 3, 4, 5]
 # After:    [0, 1, 2]
 
-# listTwo[2:]
+readAfterIndexTwo = listTwo[3:]
 # # Outputs: 
-# # Before: 
-# # After:
+# # Before: [0, 1, 2, 3, 4, 5]
+# # After:  [3, 4, 5]
+
