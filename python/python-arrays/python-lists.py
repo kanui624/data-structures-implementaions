@@ -16,44 +16,52 @@ print(arr)
 arr[1] = "ten"
 print(arr)
 # Outputs:
-# ['one', 'ten', 'three']
+# before:   ['one', 'two', 'three']
+# after:    ['one', 'ten', 'three']
 
 # The del key word deletes a value at the specified index
 del arr[1]
 print(arr)
 # Outputs:
-# ['one', 'three']
+# Before:   ['one', 'ten', 'three']
+# After:    ['one', 'three']
 
 # Use the .append() python method to inject a value to the end of a list
 arr.append(10)
 print(arr)
 # Outputs:
-# ['one', 'three', 10]
+# Before:   ['one', 'three']
+# After:    ['one', 'three', 10]
 
+# you can append anything to a list from integers, strings, and booleans to other arrays, and dictionaries
 arr.append([200, 300])
 print(arr)
 # Outputs:
-#['one', 'three', 10, [200, 300]]
+# Before:   ['one', 'three', 10]
+# After:    ['one', 'three', 10, [200, 300]]
 
 # .extend() method injects an array into another one without making it multidimensional
 arr.extend(['hey', "yo"])
 print(arr)
 # Outputs:
-# ['one', 'three', 10, [200, 300], 'hey', 'yo']
+# Before:   ['one', 'three', 10, [200, 300]]
+# After:    ['one', 'three', 10, [200, 300], 'hey', 'yo']
 
 
 # .index() method searches for an element in the list and finds it's index
 findIndex = arr.index("one")
 print(findIndex)
 # Outputs: 
-# 0
+# Current arr:  ['one', 'three', 10, [200, 300], 'hey', 'yo']
+# Returns:      0
 
-# passing a second argument in the .index() argument results in setting a reange in which to find an elements index
+# passing a second argument in the .index() argument results in setting a range in which to find an elements index
 findIndex = arr.index("yo", 4)
 # find the "yo" value but only after the 4th index
 print(findIndex)
 # Outputs: 
-# 5
+# Current arr:  ['one', 'three', 10, [200, 300], 'hey', 'yo']
+# Returns:      5
 
 # .insert() inserts an element at a specified index. the insert() method expects two arguments
 arr.insert(2, "a")
@@ -82,11 +90,49 @@ print(yo)
 # ['one', 'a', 'a', 10, [200, 300], 'hey']
 # 2
 
-# sort() method performs an in place sorting by default
+# sort() method performs an in place sorting by default. By passing the "reverse=True" argument in the list will sort in reverse
 arrTwo = ["c", "d", "b", "a"]
 arrTwo.sort()
 print(arrTwo)
 # Outputs: 
 # ['a', 'b', 'c', 'd']
 
+arrTwo.sort(reverse=True)
+print(arrTwo)
+# Outputs:
+# ['d', 'c', 'b', 'a']
 
+# reverse() reverses a list regardless of sorted status
+arr.reverse()
+print(arr)
+# Outputs:
+# ['hey', [200, 300], 10, 'a', 'a', 'one']
+
+#############################################################
+# Operators
+# The + operator can be used to extend a list:
+list = [1]
+list += [2]
+print(list)
+# Outputs:
+# Before:   [1]
+# After:    [1, 2]
+
+# Slicing
+# Slicing uses the symbol : to access part of a list
+listTwo = [0, 1, 2, 3, 4, 5]
+
+takeOutFirstTwo = listTwo[2:]
+# Outputs: 
+# Before:   [0, 1, 2, 3, 4, 5]
+# After:    [2, 3, 4, 5]
+
+readUpToThirdIndex = listTwo[:3]
+# Outputs: 
+# Before:   [0, 1, 2, 3, 4, 5]
+# After:    [0, 1, 2]
+
+# listTwo[2:]
+# # Outputs: 
+# # Before: 
+# # After:
