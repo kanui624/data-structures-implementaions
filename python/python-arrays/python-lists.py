@@ -137,3 +137,18 @@ readAfterIndexTwo = listTwo[3:]
 # # Before: [0, 1, 2, 3, 4, 5]
 # # After:  [3, 4, 5]
 
+# List comprehension 
+moduloList = [i for i in range(10) if i % 2 == 0]
+print(moduloList)
+
+# Outputs:
+# [0, 2, 4, 6, 8]
+
+# Filtering Lists
+li = [1, 2, 4]
+multByTwo = [elem*2 for elem in li if elem > 1]
+print(multByTwo)
+# Output:
+# [4, 8]
+
+
