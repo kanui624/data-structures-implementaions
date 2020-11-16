@@ -163,5 +163,19 @@ print(stack)
 # Outputs: 
 # ['a', 'b', 'c', 'd', 'e']
 
-
+#  Lists as Queues
+queue = ['a', 'b', 'c', 'd']
+queue.append("e")
+queue.append("f")
+print(queue)
+# Outputs: 
+# ['a', 'b', 'c', 'd', 'e', 'f']
+queue.pop()
+print(queue)
+# Outputs: 
+# ['a', 'b', 'c', 'd', 'e']
+queue.pop()
+print(queue)
+# Outputs: 
+# ['a', 'b', 'c', 'd']
 
