@@ -30,3 +30,28 @@ print(arr)
 # Outputs:
 # ['one', 'three', 10]
 
+arr.append([200, 300])
+print(arr)
+# Outputs:
+#['one', 'three', 10, [200, 300]]
+
+# .extend() method injects an array into another one without making it multidimensional
+arr.extend(['hey', "yo"])
+print(arr)
+# Outputs:
+# ['one', 'three', 10, [200, 300], 'hey', 'yo']
+
+
+# .index() method searches for an element in the list and finds it's index
+findIndex = arr.index("one")
+print(findIndex)
+# Outputs: 
+# 0
+
+# passing a second argument in the .index() argument results in setting a reange in which to find an elements index
+findIndex = arr.index("yo", 4)
+# find the "yo" value but only after the 4th index
+print(findIndex)
+# Outputs: 
+# 5
+
