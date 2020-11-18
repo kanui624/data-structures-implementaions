@@ -16,8 +16,15 @@ class LinkedList:
             current.next = newNode
         else:
             self.head = newNode
+        
+    def printList(self): 
+        current = self.head
+        while(current):
+            print(current.data)
+            current = current.next
 
 List = LinkedList()
-List.head = Node(3)
 List.insertNode(5)
-print(List)
+List.insertNode(4)
+List.insertNode(6)
+List.printList()
