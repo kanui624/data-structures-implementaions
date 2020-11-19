@@ -51,27 +51,24 @@ class SinglyLinkedList {
   }
 
   removeAtIndex(index) {
-    if (index < 0 || index > this.nodeCount) {
+    if (index < 0 || index > this.nodeCount - 1) {
       console.log(`index: ${index} out of range, cannot remove`);
     } else if (index === 0) {
       this.head = this.head.nextNode;
       this.nodeCount--;
-    } else if (index === this.nodeCount) {
+    } else if (index === this.nodeCount - 1) {
       let nodeBefore = this.getIndex(index - 1);
-      console.log(nodeBefore);
-      // nodeBefore.nextNode = null;
-      // this.nodeCount--;
+      nodeBefore.nextNode = null;
+      this.nodeCount--;
     } else {
-      // let nodeBefore = this.getIndex(index);
-      // nodeBefore.nextNode = nodeBefore.nextNode.nextNode;
-      // this.nodeCount--;
-      console.log('not yet');
+      let nodeBefore = this.getIndex(index - 1);
+      nodeBefore.nextNode = nodeBefore.nextNode.nextNode;
     }
   }
 
   getIndex(index) {
     if (index < 0 || index > this.nodeCount) {
-      console.log(`index: ${index} is out of range`);
+      return null;
     } else {
       let currentNode = this.head;
       let count = 0;
@@ -103,7 +100,7 @@ list.insertAtHead(12);
 list.insertAtHead(2);
 list.insertAtHead(46);
 list.insertAtHead(8);
-list.insertAtTail(100);
-list.insertAtIndex(99, 0);
-list.removeAtIndex(7);
+// list.insertAtTail(100);
+// list.insertAtIndex(99, 0);
+list.removeAtIndex(2);
 list.printList();
