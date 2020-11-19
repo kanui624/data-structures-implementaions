@@ -50,6 +50,16 @@ class SinglyLinkedList {
     this.nodeCount++;
   }
 
+  removeTail() {
+    let currentNode = this.head;
+    let count = 0;
+    while (count < this.nodeCount - 2) {
+      currentNode = currentNode.nextNode;
+      count++;
+    }
+    currentNode.nextNode = null;
+  }
+
   removeAtIndex(index) {
     if (index < 0 || index > this.nodeCount - 1) {
       console.log(`index: ${index} out of range, cannot remove`);
@@ -100,7 +110,9 @@ list.insertAtHead(12);
 list.insertAtHead(2);
 list.insertAtHead(46);
 list.insertAtHead(8);
-// list.insertAtTail(100);
-// list.insertAtIndex(99, 0);
-list.removeAtIndex(2);
+list.insertAtTail(100);
+list.insertAtIndex(99, 0);
+// list.removeAtIndex(2);
+list.removeTail();
+
 list.printList();
