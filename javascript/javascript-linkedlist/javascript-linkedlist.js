@@ -21,9 +21,16 @@ class SinglyLinkedList {
     }
     this.nodeCount++;
   }
+
+  printList() {
+    console.log(JSON.stringify(this.head, null, 4));
+  }
 }
 
 const list = new SinglyLinkedList();
 list.insertAtHead(10);
 list.insertAtHead(12);
-console.log(list);
+list.insertAtHead(2);
+list.insertAtHead(46);
+list.insertAtHead(8);
+list.printList();
