@@ -4,3 +4,10 @@ class Node {
     this.nextNode = nextNode;
   }
 }
+
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = tail;
+  }
+}
