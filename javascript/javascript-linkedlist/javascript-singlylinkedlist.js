@@ -41,11 +41,12 @@ class SinglyLinkedList {
       return this.insertAtHead(input);
     }
 
-    let currentNodeAtIndex = this.getIndex(index),
-      newNode = new Node(input);
+    let nodeBeforeIndex = this.getIndex(index - 1),
+      newNodeAtIndex = new Node(input),
+      temp = nodeBeforeIndex.nextNode;
 
-    currentNodeAtIndex = newNode;
-    newNode.nextNode = currentNodeAtIndex;
+    newNodeAtIndex.nextNode = temp;
+    nodeBeforeIndex.nextNode = newNodeAtIndex;
     this.nodeCount++;
   }
 
@@ -55,8 +56,8 @@ class SinglyLinkedList {
     } else {
       let currentNode = this.head;
       let count = 0;
-      while (count != index) {
-        currentNode = this.head.nextNode;
+      while (count < index) {
+        currentNode = currentNode.nextNode;
         count++;
       }
       return currentNode;
@@ -84,6 +85,5 @@ list.insertAtHead(2);
 list.insertAtHead(46);
 list.insertAtHead(8);
 list.insertAtTail(100);
-list.insertAtIndex(99, 3);
+list.insertAtIndex(99, 0);
 list.printList();
-// iterateDash('#');
