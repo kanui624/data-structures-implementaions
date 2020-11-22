@@ -45,6 +45,17 @@ class LinkedList {
     this.nodeCount++;
   }
 
+  removeTail() {
+    let currentNode = this.head;
+    let count = 1;
+    while (count < this.nodeCount - 1) {
+      currentNode = currentNode.nextNode;
+      count++;
+    }
+    currentNode.nextNode = null;
+    this.nodeCount--;
+  }
+
   insertAtIndex(input, index) {
     let currentNodeAtIndex = this.getNodeAtIndexHelper(index);
     if (index === 0) {
@@ -90,11 +101,9 @@ list.insertAtTail(1);
 list.insertAtTail(2);
 list.insertAtIndex(33, 5);
 list.removeHead();
+list.removeTail();
 // list.getNodeAtIndexHelper(4);
 
 list.printList();
 
-// removeHead
-// removeTail
 // removeAtIndex
-// printList
