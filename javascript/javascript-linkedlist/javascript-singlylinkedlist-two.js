@@ -8,7 +8,7 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
-    this.nodeCount = -1;
+    this.nodeCount = 0;
   }
 
   insertAtHead(input) {
@@ -28,14 +28,32 @@ class LinkedList {
       this.head = newTail;
     } else {
       let currentNode = this.head;
-      let count = 0;
-      while (count != this.nodeCount) {
+      let count = 1;
+      while (count < this.nodeCount) {
         currentNode = currentNode.nextNode;
         count++;
       }
       currentNode.nextNode = newTail;
+      //   console.log(currentNode);
     }
     this.nodeCount++;
+  }
+
+  insertAtIndex(input, index) {
+    let currentNodeAtIndex = this.getNodeAtIndexHelper(index);
+    if (index === 0) {
+      this.insertAtHead(input);
+    } else if (index === this.nodeCount) {
+      this.insertAtTail(input);
+    } else if (currentNodeAtIndex === null) {
+      console.log(`Index: ${index} is out of range cannot add node`);
+    } else {
+      let newNodeAtIndex = new Node(input);
+      let getNodeBeforeInsertion = this.getNodeAtIndexHelper(index - 1);
+      getNodeBeforeInsertion.nextNode = newNodeAtIndex;
+      newNodeAtIndex.nextNode = currentNodeAtIndex;
+      this.nodeCount++;
+    }
   }
 
   getNodeAtIndexHelper(index) {
@@ -54,6 +72,7 @@ class LinkedList {
 
   printList() {
     console.log(JSON.stringify(this.head, null, 4));
+    console.log(`Node Count: ${this.nodeCount}`);
   }
 }
 
@@ -62,10 +81,11 @@ list.insertAtHead(12);
 list.insertAtHead(10);
 list.insertAtHead(8);
 list.insertAtTail(1);
+list.insertAtTail(2);
+list.insertAtIndex(33, 5);
+list.getNodeAtIndexHelper(4);
 list.printList();
 
-// getNodeAtIndexHelper
-// insertAtIndex
 // removeHead
 // removeTail
 // removeAtIndex
