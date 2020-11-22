@@ -10,8 +10,13 @@ class LinkedList {
     this.head = head;
     this.nodeCount = 0;
   }
+
+  printList() {
+    console.log(JSON.stringify(this.head, null, 4));
+  }
 }
 
+printList();
 // insert
 // insertAtHead
 // insertAtTail
