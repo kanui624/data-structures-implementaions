@@ -8,7 +8,7 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
-    this.nodeCount = 0;
+    this.nodeCount = -1;
   }
 
   insertAtHead(input) {
@@ -28,7 +28,7 @@ class LinkedList {
       this.head = newTail;
     } else {
       let currentNode = this.head;
-      let count = 1;
+      let count = 0;
       while (count != this.nodeCount) {
         currentNode = currentNode.nextNode;
         count++;
@@ -36,6 +36,20 @@ class LinkedList {
       currentNode.nextNode = newTail;
     }
     this.nodeCount++;
+  }
+
+  getNodeAtIndexHelper(index) {
+    if (index < 0 || index > this.nodeCount) {
+      return null;
+    } else {
+      let currentNode = this.head;
+      let count = 0;
+      while (count != index) {
+        currentNode = currentNode.nextNode;
+        count++;
+      }
+      return currentNode;
+    }
   }
 
   printList() {
@@ -50,7 +64,7 @@ list.insertAtHead(8);
 list.insertAtTail(1);
 list.printList();
 
-// getIndexHelper
+// getNodeAtIndexHelper
 // insertAtIndex
 // removeHead
 // removeTail
