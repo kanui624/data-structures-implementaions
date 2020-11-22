@@ -22,6 +22,12 @@ class LinkedList {
     this.nodeCount++;
   }
 
+  removeHead() {
+    let currentHead = this.head;
+    this.head = currentHead.nextNode;
+    this.nodeCount--;
+  }
+
   insertAtTail(input) {
     let newTail = new Node(input);
     if (!this.head) {
@@ -83,7 +89,9 @@ list.insertAtHead(8);
 list.insertAtTail(1);
 list.insertAtTail(2);
 list.insertAtIndex(33, 5);
-list.getNodeAtIndexHelper(4);
+list.removeHead();
+// list.getNodeAtIndexHelper(4);
+
 list.printList();
 
 // removeHead
