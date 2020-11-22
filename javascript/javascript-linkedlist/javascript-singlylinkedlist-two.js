@@ -73,6 +73,19 @@ class LinkedList {
     }
   }
 
+  removeAtIndex(index) {
+    if (index === 0) {
+      this.removeHead();
+    } else if (index === this.nodeCount - 1) {
+      this.removeTail();
+    } else {
+      let nodeToBeRemoved = this.getNodeAtIndexHelper(index);
+      let nodeBeforeRemoval = this.getNodeAtIndexHelper(index - 1);
+      nodeBeforeRemoval.nextNode = nodeToBeRemoved.nextNode;
+      this.nodeCount--;
+    }
+  }
+
   getNodeAtIndexHelper(index) {
     if (index < 0 || index > this.nodeCount) {
       return null;
@@ -102,8 +115,7 @@ list.insertAtTail(2);
 list.insertAtIndex(33, 5);
 list.removeHead();
 list.removeTail();
+list.removeAtIndex(1);
 // list.getNodeAtIndexHelper(4);
 
 list.printList();
-
-// removeAtIndex
