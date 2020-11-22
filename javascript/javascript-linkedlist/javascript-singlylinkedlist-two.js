@@ -7,8 +7,19 @@ class Node {
 
 class LinkedList {
   constructor() {
-    this.head = head;
+    this.head = null;
     this.nodeCount = 0;
+  }
+
+  insertAtHead(input) {
+    let newHead = new Node(input);
+    if (!this.head) {
+      this.head = newHead;
+    } else {
+      newHead.nextNode = this.head;
+      this.head = newHead;
+    }
+    this.nodeCount++;
   }
 
   printList() {
@@ -16,7 +27,11 @@ class LinkedList {
   }
 }
 
-printList();
+const list = new LinkedList();
+list.insertAtHead(12);
+list.insertAtHead(10);
+list.insertAtHead(8);
+list.printList();
 // insert
 // insertAtHead
 // insertAtTail
