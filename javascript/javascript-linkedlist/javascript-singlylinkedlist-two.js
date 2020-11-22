@@ -22,6 +22,22 @@ class LinkedList {
     this.nodeCount++;
   }
 
+  insertAtTail(input) {
+    let newTail = new Node(input);
+    if (!this.head) {
+      this.head = newTail;
+    } else {
+      let currentNode = this.head;
+      let count = 1;
+      while (count != this.nodeCount) {
+        currentNode = currentNode.nextNode;
+        count++;
+      }
+      currentNode.nextNode = newTail;
+    }
+    this.nodeCount++;
+  }
+
   printList() {
     console.log(JSON.stringify(this.head, null, 4));
   }
@@ -31,10 +47,9 @@ const list = new LinkedList();
 list.insertAtHead(12);
 list.insertAtHead(10);
 list.insertAtHead(8);
+list.insertAtTail(1);
 list.printList();
-// insert
-// insertAtHead
-// insertAtTail
+
 // getIndexHelper
 // insertAtIndex
 // removeHead
