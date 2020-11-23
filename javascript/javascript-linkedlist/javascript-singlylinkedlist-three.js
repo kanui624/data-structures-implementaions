@@ -22,6 +22,21 @@ class SinglyLinkedList {
     this.nodeCount++;
   }
 
+  getNodeAtIndex(index) {
+    let indexRef = this.nodeCount - 1;
+    if (index < 0 || index > indexRef) {
+      return null;
+    } else {
+      let counterNode = this.head;
+      let count = 0;
+      while (count <= indexRef) {
+        counterNode = counterNode.nextNode;
+        count++;
+      }
+      return counterNode;
+    }
+  }
+
   printList() {
     return JSON.stringify(this.head, null, 4);
   }
@@ -39,4 +54,4 @@ list.insertAtHead(1);
 list.insertAtHead(2);
 list.insertAtHead(3);
 const printedList = list.printList();
-console.log(printedList);
+console.log(printedList, `Node Count: ${list.nodeCount}`);
