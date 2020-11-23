@@ -8,4 +8,12 @@ class LinkedList:
         self.head = None
         self.nodeCount = 0
 
+# insertAtHead
+# insertAtTail
+# insertAtIndex
+# getIndexHelper
+# removeHead
+# removeTail
+# removeAtIndex
+# printList
     
