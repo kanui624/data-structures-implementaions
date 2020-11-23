@@ -10,13 +10,19 @@ class SinglyLinkedList {
     this.head = null;
     this.nodeCount = 0;
   }
+
+  printList() {
+    return JSON.stringify(this.head, null, 4);
+  }
 }
 
-// insertAtHead
 // insertAtTail
 // insertAtIndex
 // removeHead
 // removeTail
 // removeAtIndex
-// printList
 // getIndexHelper
+
+const list = new SinglyLinkedList();
+const printedList = list.printList();
+console.log(printedList);
