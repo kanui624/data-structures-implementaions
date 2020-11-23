@@ -49,6 +49,26 @@ class SinglyLinkedList {
     }
   }
 
+  removeHead() {
+    if (!this.head) {
+      console.log('No head to Remove');
+    } else {
+      let newHeadNode = this.head.nextNode;
+      this.head = newHeadNode;
+      this.nodeCount--;
+    }
+  }
+
+  removeTail() {
+    if (this.nodeCount === 1) {
+      this.head = null;
+    } else {
+      let beforeTailToRemove = this.getNodeAtIndex(this.nodeCount - 2);
+      beforeTailToRemove.nextNode = null;
+      this.nodeCount--;
+    }
+  }
+
   getNodeAtIndex(index) {
     if (index < 0 || index > this.nodeCount - 1) {
       console.log(`Index: ${index} is out of range`);
@@ -70,8 +90,6 @@ class SinglyLinkedList {
   }
 }
 
-// removeHead
-// removeTail
 // removeAtIndex
 // getIndexHelper
 
@@ -81,6 +99,8 @@ list.insertAtHead(2);
 list.insertAtHead(3);
 list.insertAtTail(4);
 list.insertAtIndex(5, 4);
+// list.removeHead();
+// list.removeTail();
 const printedList = list.printList();
 
 // const getNode = list.getNodeAtIndex(0);
