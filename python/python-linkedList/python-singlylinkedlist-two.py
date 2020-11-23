@@ -28,6 +28,17 @@ class LinkedList:
             currentHead.nextNode = newTailNode
             self.nodeCount += 1
 
+    def getIndexHelper(self, index):
+        if(index == 0):
+            print(self.head.node)
+        else: 
+            counterNode = self.head
+            while(counterNode):
+                counterNode = counterNode.nextNode
+            print(counterNode.node) 
+
+
+
     def printList(self):
         current = self.head
         print("Node Count: {}".format(self.nodeCount))
@@ -42,10 +53,10 @@ list.insertAtHead(1)
 list.insertAtHead(2)
 list.insertAtHead(3)
 list.insertAtTail(7)
+list.getIndexHelper(2)
 list.printList()
-# insertAtTail
 # insertAtIndex
-# getIndexHelper
+
 # removeHead
 # removeTail
 # removeAtIndex
