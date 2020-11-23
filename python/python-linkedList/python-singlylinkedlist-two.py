@@ -16,12 +16,19 @@ class LinkedList:
         else: 
             self.head = newHeadNode
         self.nodeCount += 1
+        
+    def printList(self):
+        current = self.head
+        print("Node Count: {}".format(self.nodeCount))
+        while(current):
+            print(current.node)
+            current = current.nextNode
        
 
 
 list = LinkedList()
 list.insertAtHead(1)
-
+list.printList()
 # insertAtHead
 # insertAtTail
 # insertAtIndex
