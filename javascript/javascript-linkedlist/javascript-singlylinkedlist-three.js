@@ -23,13 +23,14 @@ class SinglyLinkedList {
   }
 
   getNodeAtIndex(index) {
-    let indexRef = this.nodeCount - 1;
-    if (index < 0 || index > indexRef) {
-      return null;
+    if (index < 0 || index > this.nodeCount - 1) {
+      return { error: `Index: ${index} is out of range` };
+    } else if (index === 0) {
+      return this.head;
     } else {
       let counterNode = this.head;
       let count = 0;
-      while (count <= indexRef) {
+      while (count < index) {
         counterNode = counterNode.nextNode;
         count++;
       }
@@ -54,4 +55,5 @@ list.insertAtHead(1);
 list.insertAtHead(2);
 list.insertAtHead(3);
 const printedList = list.printList();
-console.log(printedList, `Node Count: ${list.nodeCount}`);
+const getNode = list.getNodeAtIndex(0);
+console.log(printedList, getNode, `NodeCount: ${list.nodeCount}`);
