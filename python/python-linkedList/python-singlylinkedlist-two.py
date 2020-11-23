@@ -41,6 +41,21 @@ class LinkedList:
             nodeBeforeIndex.nextNode = newNodeAtIndex
             newNodeAtIndex.nextNode = nodeOccupyingIndex
 
+    def removeHead(self):
+        if not(self.head):
+            return 
+        else: 
+            self.head = self.head.nextNode
+            self.nodeCount -= 1
+    
+    def removeTail(self):
+        if not(self.head):
+            return
+        else:
+            beforeTailNode = self.getIndexHelper(self.nodeCount - 2)
+            beforeTailNode.nextNode = None
+            self.nodeCount -= 1
+
     def getIndexHelper(self, index):
         if(index < 0 or index > self.nodeCount - 1):
             print("Index: {} is out of Range".format(index))
@@ -70,12 +85,12 @@ list.insertAtHead(3)
 list.insertAtTail(7)
 list.insertAtTail(9)
 list.insertAtIndex(300, 5)
+list.removeHead()
+list.removeTail()
 # list.getIndexHelper(4)
 list.printList()
 
 
-# removeHead
-# removeTail
 # removeAtIndex
 # printList
     
