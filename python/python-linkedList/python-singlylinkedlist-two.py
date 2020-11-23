@@ -17,6 +17,17 @@ class LinkedList:
             self.head = newHeadNode
         self.nodeCount += 1
         
+    def insertAtTail(self, input):
+        newTailNode = Node(input)
+        if(self.head): 
+            currentHead = self.head
+            count = 1
+            while(count < self.nodeCount):
+                currentHead = currentHead.nextNode
+                count += 1
+            currentHead.nextNode = newTailNode
+            self.nodeCount += 1
+
     def printList(self):
         current = self.head
         print("Node Count: {}".format(self.nodeCount))
@@ -28,8 +39,10 @@ class LinkedList:
 
 list = LinkedList()
 list.insertAtHead(1)
+list.insertAtHead(2)
+list.insertAtHead(3)
+list.insertAtTail(7)
 list.printList()
-# insertAtHead
 # insertAtTail
 # insertAtIndex
 # getIndexHelper
