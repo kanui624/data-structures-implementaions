@@ -13,7 +13,7 @@ print(arr)
 # ['one', 'two', 'three']
 
 # Lists are mutable
-arr[1] = "ten"
+arr[1] = "ten" 
 print(arr)
 # Outputs:
 # before:   ['one', 'two', 'three']

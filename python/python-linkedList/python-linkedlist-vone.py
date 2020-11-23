@@ -17,7 +17,7 @@ class LinkedList:
         else:
             self.head = newNode
         
-    def printList(self): 
+    def printList(self):  
         current = self.head
         while(current):
             print(current.data)

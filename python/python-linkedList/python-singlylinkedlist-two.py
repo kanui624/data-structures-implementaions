@@ -18,7 +18,7 @@ class LinkedList:
         self.nodeCount += 1
         
     def insertAtTail(self, input):
-        newTailNode = Node(input)
+        newTailNode = Node(input) 
         if not(self.head):
             self.head = newTailNode
             self.nodeCount += 1
