@@ -59,8 +59,23 @@ class SinglyLinkedList {
     if (!this.head) {
       return null;
     } else {
-      let nodeBeforeTail = this.getIndexHelper(this.nodeCount - 2);
+      let nodeBeforeTail = this.getIndexHelper(this.nodeCount - 1);
       nodeBeforeTail.nextNode = null;
+      this.nodeCount--;
+    }
+  }
+
+  removeAtIndex(index) {
+    if (index < 0 || index > this.nodeCount) {
+      console.log(`Index: ${index} is out of Range`);
+    } else if (index === 0) {
+      this.removeHead();
+    } else if (index === this.nodeCount) {
+      this.removeTail();
+    } else {
+      let nodeBefore = this.getIndexHelper(index - 1);
+      let nodeToRemove = this.getIndexHelper(index);
+      nodeBefore.nextNode = nodeToRemove.nextNode;
       this.nodeCount--;
     }
   }
@@ -94,7 +109,8 @@ list.insertAtHead(5);
 list.insertAtTail(7);
 list.insertAtIndex(16, 2);
 // list.removeHead();
-list.removeTail();
+// list.removeTail();
+list.removeAtIndex(5);
 list.printList();
 
 // removeAtIndex
