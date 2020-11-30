@@ -20,7 +20,7 @@ class Node {
 }
 
 class SinglyLinkedList {
-  constructor(head, nodeCount) {
+  constructor() {
     this.head = head;
     this.nodeCount = 0;
   }
