@@ -43,6 +43,22 @@ class SinglyLinkedList {
     this.nodeCount++;
   }
 
+  getIndexHelper(index) {
+    if (index < 0 || index > this.nodeCount) {
+      console.log(`Index: ${index} is out of range`);
+    } else if (index === 0) {
+      return this.head;
+    } else {
+      let currentNode = this.head;
+      let count = 0;
+      while (count != index) {
+        currentNode = currentNode.nextNode;
+        count++;
+      }
+      console.log(currentNode);
+    }
+  }
+
   printList() {
     console.log(
       JSON.stringify(this.head, null, 4),
@@ -56,4 +72,7 @@ const list = new SinglyLinkedList();
 list.insertAtHead(3);
 list.insertAtHead(4);
 list.insertAtHead(9);
+list.insertAtHead(12);
+list.insertAtHead(6);
+// list.getIndexHelper();
 list.printList();
