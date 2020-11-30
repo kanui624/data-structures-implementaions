@@ -26,20 +26,15 @@ class SinglyLinkedList {
   }
 
   insertAtHead(input) {
-    // create a new Node with the given input
     let newHeadNode = new Node(input);
-    // if there is no head
     if (!this.head) {
-      // then the newly created node is the new head
+      d;
       this.head = newHeadNode;
-      // if there is a head
+      d;
     } else {
-      // then the newNode's nextNode value will point to the current head
       newHeadNode.nextNode = this.head;
-      // and the new Node will become the new head
       this.head = newHeadNode;
     }
-    // then we will increment the nodeCount by 1
     this.nodeCount++;
   }
 
