@@ -42,4 +42,18 @@ class SinglyLinkedList {
     // then we will increment the nodeCount by 1
     this.nodeCount++;
   }
+
+  printList() {
+    console.log(
+      JSON.stringify(this.head, null, 4),
+      `Node Count: ${this.nodeCount}`
+    );
+  }
 }
+
+const list = new SinglyLinkedList();
+
+list.insertAtHead(3);
+list.insertAtHead(4);
+list.insertAtHead(9);
+list.printList();
