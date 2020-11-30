@@ -73,10 +73,20 @@ class SinglyLinkedList {
 
   removeHead() {
     if (!this.head) {
-      console.log('No list to remove');
+      console.log('No head to remove');
     } else {
       let currentHead = this.head;
       this.head = currentHead.nextNode;
+      this.nodeCount--;
+    }
+  }
+
+  removeTail() {
+    if (!this.head) {
+      console.log('No tail to remove');
+    } else {
+      let tailBeforeRemove = this.getIndexHelper(this.nodeCount - 2);
+      tailBeforeRemove.nextNode = null;
       this.nodeCount--;
     }
   }
@@ -113,6 +123,7 @@ list.insertAtHead(9);
 list.insertAtHead(12);
 list.insertAtHead(6);
 list.insertAtTail(15);
+list.removeTail();
 // list.removeHead();
 // list.insertAtIndex(0, 7);
 // list.getIndexHelper();
