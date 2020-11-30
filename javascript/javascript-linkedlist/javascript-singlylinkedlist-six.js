@@ -122,6 +122,12 @@ class SinglyLinkedList {
     }
   }
 
+  deleteList() {
+    this.head = null;
+    this.nodeCount = 0;
+    console.log('List Deleted');
+  }
+
   printList() {
     console.log(
       JSON.stringify(this.head, null, 4),
@@ -139,6 +145,7 @@ list.insertAtHead(12);
 list.insertAtHead(6);
 list.insertAtTail(15);
 list.removeAtIndex(5);
+list.deleteList();
 // list.removeTail();
 // list.removeHead();
 // list.insertAtIndex(0, 7);
