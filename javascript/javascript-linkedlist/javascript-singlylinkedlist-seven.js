@@ -22,6 +22,20 @@ class SinglyLinkedList {
     this.nodeCount++;
   }
 
+  getIndexHelper(index) {
+    if (index < 0 || index > this.nodeCount) {
+      return null;
+    } else {
+      let currentNode = this.head;
+      let count = 0;
+      while (count != index) {
+        currentNode = currentNode.nextNode;
+        count++;
+      }
+      return currentNode;
+    }
+  }
+
   printList() {
     console.log(
       JSON.stringify(this.head, null, 4),
