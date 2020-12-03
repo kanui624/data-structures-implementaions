@@ -11,3 +11,16 @@ class SinglyLinkedList {
     this.nodeCount = 0;
   }
 }
+
+// Methods
+// insertAtHead
+// insertAtTail
+// insertAtIndex
+// getIndexHelper
+// removeHead
+// removeTail
+// removeAtIndex
+// printList
+
+// Bonus:
+// Sum All node values together
