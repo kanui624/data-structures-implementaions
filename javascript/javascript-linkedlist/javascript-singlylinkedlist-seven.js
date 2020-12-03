@@ -49,6 +49,16 @@ class SinglyLinkedList {
     }
   }
 
+  removeHead() {
+    if (!this.head) {
+      return null;
+    } else {
+      let headToRemove = this.head;
+      this.head = headToRemove.nextNode;
+    }
+    this.nodeCount--;
+  }
+
   getIndexHelper(index) {
     if (index < 0 || index > this.nodeCount) {
       return null;
@@ -76,7 +86,8 @@ list.insertAtHead(2);
 list.insertAtHead(3);
 list.insertAtHead(4);
 list.insertAtTail(6);
-list.insertAtIndex(45, 5);
+list.insertAtIndex(45, 4);
+list.removeHead();
 list.printList();
 
 // Methods
