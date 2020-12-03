@@ -10,6 +10,17 @@ class SinglyLinkedList {
     this.head = null;
     this.nodeCount = 0;
   }
+
+  insertAtHead(input) {
+    let newHeadNode = new Node(input);
+    if (!this.head) {
+      this.head = newHeadNode;
+    } else {
+      newHeadNode.nextNode = this.head;
+      this.head = newHeadNode;
+    }
+    this.nodeCount++;
+  }
 }
 
 // Methods
