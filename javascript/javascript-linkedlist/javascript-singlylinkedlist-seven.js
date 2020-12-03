@@ -22,6 +22,17 @@ class SinglyLinkedList {
     this.nodeCount++;
   }
 
+  insertAtTail(input) {
+    let newTailNode = new Node(input);
+    if (!this.head) {
+      this.head = newTailNode;
+    } else {
+      let currentTail = this.getIndexHelper(this.nodeCount - 1);
+      currentTail.nextNode = newTailNode;
+    }
+    this.nodeCount++;
+  }
+
   getIndexHelper(index) {
     if (index < 0 || index > this.nodeCount) {
       return null;
@@ -48,6 +59,7 @@ let list = new SinglyLinkedList();
 list.insertAtHead(2);
 list.insertAtHead(3);
 list.insertAtHead(4);
+list.insertAtTail(6);
 list.printList();
 
 // Methods
