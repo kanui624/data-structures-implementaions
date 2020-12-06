@@ -50,6 +50,13 @@ class SinglyLinkedList {
     }
   }
 
+  removeHead() {
+    if (!this.head) return null;
+    let currentHead = this.head;
+    this.head = currentHead.nextNode;
+    this.nodeCount--;
+  }
+
   getIndexHelper(index) {
     if (index < 0 || index > this.nodeCount) {
       console.log(`Index: ${index} is out of range`);
@@ -80,6 +87,7 @@ list.insertAtHead(2);
 list.insertAtHead(3);
 list.insertAtTail(6);
 list.insertAtIndex(8, 4);
+list.removeHead();
 list.printList();
 
 // insertAtHead
