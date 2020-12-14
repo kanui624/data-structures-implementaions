@@ -101,6 +101,16 @@ class SinglyLinkedList {
     }
   }
 
+  sumAllNodes() {
+    let currentNode = this.head;
+    let nodeSum = 0;
+    while (currentNode) {
+      nodeSum += currentNode.node;
+      currentNode = currentNode.nextNode;
+    }
+    console.log(nodeSum);
+  }
+
   printList() {
     console.log(
       JSON.stringify(this.head, null, 4),
@@ -116,6 +126,7 @@ list.insertAtHead(3);
 list.insertAtTail(8);
 list.insertAtIndex(13, 4);
 list.removeAtIndex(5);
+list.sumAllNodes();
 // list.removeHead();
 // list.removeTail();
 list.printList();
