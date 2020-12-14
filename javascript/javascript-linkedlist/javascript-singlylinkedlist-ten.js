@@ -4,3 +4,13 @@ class Node {
     this.nextNode = nextNode;
   }
 }
+
+// insertAtHead
+// insertAtTail
+// insertAtIndex
+// getIndexHelper
+// removeHead
+// removeTail
+// removeAtIndex
+// printList
+// sumAllNodes
