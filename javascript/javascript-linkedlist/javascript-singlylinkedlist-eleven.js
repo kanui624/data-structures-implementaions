@@ -5,6 +5,12 @@ class Node {
   }
 }
 
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.nodeCount = 0;
+  }
+}
 // insertAtHead
 // insertAtTail
 // insertAtIndex
