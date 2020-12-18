@@ -21,6 +21,13 @@ class SinglyLinkedList {
     }
     this.nodeCount++;
   }
+
+  printList() {
+    console.log(
+      JSON.stringify(this.head, null, 4),
+      `Node Count: ${this.nodeCount}`
+    );
+  }
 }
 // insertAtHead
 // insertAtTail
