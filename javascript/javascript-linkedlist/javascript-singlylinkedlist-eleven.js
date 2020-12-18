@@ -85,6 +85,20 @@ class SinglyLinkedList {
     }
   }
 
+  sumAllNodes() {
+    let sumAll = 0;
+    if (!this.head) {
+      return;
+    } else {
+      let current = this.head;
+      while (current) {
+        sumAll += current.node;
+        current = current.nextNode;
+      }
+      console.log(`Node Sum: ${sumAll}`);
+    }
+  }
+
   getIndexHelper(index) {
     if (index < 0 || index > this.nodeCount) {
       console.log(`Index: ${index} is out of range`);
@@ -116,6 +130,7 @@ list.insertAtHead(3);
 list.insertAtTail(5);
 list.insertAtIndex(8, 3);
 list.removeAtIndex(5);
+list.sumAllNodes();
 // list.removeHead();
 // list.removeTail();
 list.printList();
