@@ -1,7 +1,7 @@
 class Node {
   constructor(node, nextNode = null) {
     this.node = node;
-    this.nextNode = node;
+    this.nextNode = nextNode;
   }
 }
 
@@ -29,6 +29,12 @@ class SinglyLinkedList {
     );
   }
 }
+
+const list = new SinglyLinkedList();
+list.insertAtHead(3);
+list.insertAtHead(4);
+list.insertAtHead(6);
+list.printList();
 // insertAtHead
 // insertAtTail
 // insertAtIndex
