@@ -60,6 +60,16 @@ class SinglyLinkedList {
     this.nodeCount--;
   }
 
+  removeTail() {
+    if (!this.head) {
+      return;
+    } else {
+      let nodeBeforeTail = this.getIndexHelper(this.nodeCount - 2);
+      nodeBeforeTail.nextNode = null;
+    }
+    this.nodeCount--;
+  }
+
   getIndexHelper(index) {
     if (index < 0 || index > this.nodeCount) {
       console.log(`Index: ${index} is out of range`);
