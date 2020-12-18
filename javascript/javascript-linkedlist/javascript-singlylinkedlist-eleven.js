@@ -22,6 +22,22 @@ class SinglyLinkedList {
     this.nodeCount++;
   }
 
+  getIndexHelper(index) {
+    if (index < 0 || index > this.nodeCount) {
+      console.log(`Index: ${index} is out of range`);
+    } else if (index === 0) {
+      return this.head;
+    } else {
+      let currentNode = this.head;
+      let count = 0;
+      while (count != index) {
+        currentNode = currentNode.nextNode;
+        count++;
+      }
+      return currentNode;
+    }
+  }
+
   printList() {
     console.log(
       JSON.stringify(this.head, null, 4),
