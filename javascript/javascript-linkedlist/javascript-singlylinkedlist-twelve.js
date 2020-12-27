@@ -34,20 +34,30 @@ class SinglyLinkedList {
   }
 
   insertAtIndex(input, index) {
-    let indexSpecified = this.getNodeAtIndexHelper(index);
-    if (index < 0 || index >= this.nodeCount) {
+    if (index < 0 || index > this.nodeCount) {
       console.log(`Index: ${index} is out of range`);
     } else if (index === 0) {
       this.insertAtHead(input);
     } else if (index === this.nodeCount) {
       this.insertAtTail(input);
     } else {
+      let indexSpecified = this.getNodeAtIndexHelper(index);
       let newNodeAtIndex = new Node(input);
       let nodeBeforeIndex = this.getNodeAtIndexHelper(index - 1);
       nodeBeforeIndex.nextNode = newNodeAtIndex;
       newNodeAtIndex.nextNode = indexSpecified;
       this.nodeCount++;
     }
+  }
+
+  removeHead() {
+    if (!this.head) {
+      return;
+    } else {
+      let currentHead = this.head;
+      this.head = currentHead.nextNode;
+    }
+    this.nodeCount--;
   }
 
   getNodeAtIndexHelper(index) {
@@ -81,7 +91,7 @@ list.insertAtHead(5);
 list.insertAtTail(6);
 list.insertAtTail(8);
 list.insertAtTail(1);
-list.insertAtIndex(0, 7);
+list.insertAtIndex(0, 6);
 list.printList();
 
 // insertAtHead
