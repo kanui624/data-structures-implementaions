@@ -10,6 +10,13 @@ class SinglyLinkedList {
     this.head = null;
     this.nodeCount = 0;
   }
+
+  printList() {
+    console.log(
+      JSON.stringify(this.head, null, 4),
+      `Node Count: ${this.nodeCount}`
+    );
+  }
 }
 
 // insertAtHead
