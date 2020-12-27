@@ -60,6 +60,16 @@ class SinglyLinkedList {
     this.nodeCount--;
   }
 
+  removeTail() {
+    if (!this.head) {
+      return;
+    } else {
+      let nodeBeforeTail = this.getNodeAtIndexHelper(this.nodeCount - 2);
+      nodeBeforeTail.nextNode = null;
+    }
+    this.nodeCount--;
+  }
+
   getNodeAtIndexHelper(index) {
     if (index < 0 || index > this.nodeCount) {
       return;
@@ -92,6 +102,8 @@ list.insertAtTail(6);
 list.insertAtTail(8);
 list.insertAtTail(1);
 list.insertAtIndex(0, 6);
+// list.removeHead();
+list.removeTail();
 list.printList();
 
 // insertAtHead
