@@ -30,6 +30,12 @@ class SinglyLinkedList {
   }
 }
 
+const list = new SinglyLinkedList();
+list.insertAtHead(2);
+list.insertAtHead(4);
+list.insertAtHead(5);
+list.printList();
+
 // insertAtHead
 // insertAtTail
 // insertAtIndex
