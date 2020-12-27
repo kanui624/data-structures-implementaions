@@ -85,6 +85,20 @@ class SinglyLinkedList {
     }
   }
 
+  sumAllNodes() {
+    let sum = 0;
+    if (!this.head) {
+      return 0;
+    } else {
+      let current = this.head;
+      while (current) {
+        sum += current.node;
+        current = current.nextNode;
+      }
+    }
+    console.log(`Node Sum: ${sum}`);
+  }
+
   getNodeAtIndexHelper(index) {
     if (index < 0 || index > this.nodeCount) {
       return;
@@ -120,6 +134,7 @@ list.insertAtIndex(0, 6);
 // list.removeHead();
 // list.removeTail();
 list.removeAtIndex(8);
+list.sumAllNodes();
 list.printList();
 
 // insertAtHead
